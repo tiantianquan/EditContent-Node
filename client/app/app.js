@@ -5,7 +5,8 @@ angular.module('yoAngularWithNodeApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'contentEdit'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
