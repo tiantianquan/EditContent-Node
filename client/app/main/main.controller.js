@@ -23,6 +23,23 @@ angular.module('yoAngularWithNodeApp')
     };
 
     //-------------------------------------------
-    $scope.editContent = '<h1>Title</h1>';
     $scope.isEdit = true;
+
+    $scope.article = {};
+
+    $scope.getData = function() {
+      $http.get('/api/editcontents')
+        .success(function(data) {
+          $scope.article = data;
+        });
+    };
+    $scope.postData = function() {
+      $http.post('/api/editcontents', $scope.article)
+        .success(function(data) {
+          $scope.article = data;
+
+        })
+        .error(function(data) {
+        });
+    };
   });
